@@ -67,6 +67,7 @@ Follow the prompts to create the superuser account.
 You can manage registrations and perform other admin tasks by visiting http://127.0.0.1:8000/admin/ and logging in with the superuser credentials.
 
 # File Structure
+```bash
 registration-form/
 ├── manage.py                # Django project management commands
 ├── registration/             # Your Django app
@@ -78,7 +79,7 @@ registration-form/
 │   │   └── form.html         # Registration form HTML
 ├── requirements.txt          # Project dependencies
 └── db.sqlite3                # SQLite database (automatically created)
-
+```
 # Project Details
 
 ## Models
