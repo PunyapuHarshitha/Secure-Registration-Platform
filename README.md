@@ -66,8 +66,7 @@ Follow the prompts to create the superuser account.
 6. Admin interface
 You can manage registrations and perform other admin tasks by visiting http://127.0.0.1:8000/admin/ and logging in with the superuser credentials.
 
-#File Structure
-```
+# File Structure
 registration-form/
 ├── manage.py                # Django project management commands
 ├── registration/             # Your Django app
@@ -79,45 +78,34 @@ registration-form/
 │   │   └── form.html         # Registration form HTML
 ├── requirements.txt          # Project dependencies
 └── db.sqlite3                # SQLite database (automatically created)
-```
-###Project Details
-###Models
+
+# Project Details
+
+## Models
 The Registration model contains the following fields:
 
-person_name - Full name of the user.
-person_mobile_no - Mobile number of the user.
-adhar_no - Aadhar number of the user.
-institute_name - Name of the institute.
-institute_govt_reg_no - Government registration number of the institute.
-institute_website - Website of the institute.
-password - User's password.
-confirm_password - Password confirmation.
-adhar_front, adhar_back, institute_reg_copy - File uploads for the Aadhar card and institute registration copy.
-###Views
+- person_name - Full name of the user.
+- person_mobile_no - Mobile number of the user.
+- adhar_no - Aadhar number of the user.
+- institute_name - Name of the institute.
+- institute_govt_reg_no - Government registration number of the institute.
+- institute_website - Website of the institute.
+- password - User's password.
+- confirm_password - Password confirmation.
+- adhar_front, adhar_back, institute_reg_copy - File uploads for the Aadhar card and institute registration copy.
+
+## Views
 The register view handles the registration form submission. It processes the form data, checks if passwords match, and saves the data to the database. If an error occurs, it will render an error message.
 
-###Admin Interface
+## Admin Interface
 The admin interface is configured to manage Registration entries. You can view and search registrations through the Django admin panel.
 
-###File Uploads
+## File Uploads
 Ensure the Django project is set up correctly to handle media file uploads. Add the following to the settings.py file:
-
 
 ```bash
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ```
-Make sure to update urls.py to serve media files during development:
-
-```bash
-from django.conf import settings
-from django.conf.urls.static import static
-  
-urlpatterns = [
-# Your URLs here...
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-```
-##Contributing
-Feel free to fork this repository and contribute. Submit a pull request with your improvements.
 
 
