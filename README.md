@@ -25,14 +25,14 @@ Before setting up this project, make sure you have the following installed:
 
 ## Setup Instructions
 
-###1. Clone the repository
+1. Clone the repository
 
 ```bash
 git clone https://github.com/yourusername/registration-form.git
 cd registration-form
 ```
 
-###2. Install dependencies
+2. Install dependencies
 Create a virtual environment (recommended) and install the necessary dependencies:
 
 ```bash
@@ -41,13 +41,13 @@ source env/bin/activate   # For Linux/MacOS
 env\Scripts\activate      # For Windows
 pip install -r requirements.txt
 ```
-###3. Set up database
+3. Set up database
 Run migrations to set up the database schema:
 
 ```bash
 python manage.py migrate
 ```
-###4. Run the development server
+4. Run the development server
 Now, run the development server to see the app in action:
 
 ```bash
@@ -55,7 +55,7 @@ python manage.py runserver
 ```
 You can access the application by navigating to http://127.0.0.1:8000/ in your browser.
 
-###5. Create a superuser
+5. Create a superuser
 To access the Django admin interface, create a superuser by running:
 
 ```bash
@@ -63,10 +63,10 @@ python manage.py createsuperuser
 ```
 Follow the prompts to create the superuser account.
 
-###6. Admin interface
+6. Admin interface
 You can manage registrations and perform other admin tasks by visiting http://127.0.0.1:8000/admin/ and logging in with the superuser credentials.
 
-###File Structure
+#File Structure
 ```
 registration-form/
 ├── manage.py                # Django project management commands
