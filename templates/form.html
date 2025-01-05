@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Registration Form</title>
+    
+    <!-- Link the external CSS file -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Registration Form</h1>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="personName">Person Name:</label>
+            <input type="text" id="personName" name="personName" placeholder="Enter person name" required><br>
+
+            <label for="personMbno">Person Mobile No:</label>
+            <input type="tel" id="personMbno" name="personMbno" placeholder="Enter mobile number" required><br>
+
+            <label for="adharNo">Adhar No:</label>
+            <input type="text" id="adharNo" name="adharNo" placeholder="Enter Aadhar number" required><br>
+
+            <label for="adharFront">Upload Aadhar Front:</label>
+            <input type="file" name="adharFront" accept="image/*" required><br>
+
+            <label for="adharBack">Upload Aadhar Back:</label>
+            <input type="file" name="adharBack" accept="image/*" required><br>
+
+            <label for="instituteName">Institute Name:</label>
+            <input type="text" id="instituteName" name="instituteName" placeholder="Enter institute name" required><br>
+
+            <label for="instituteRegNo">Institute Govt Reg No:</label>
+            <input type="text" id="instituteRegNo" name="instituteRegNo" placeholder="Enter registration number" required><br>
+
+            <label for="instituteWeb">Institute Website:</label>
+            <input type="url" id="instituteWeb" name="instituteWeb" placeholder="Enter website URL" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required><br>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required><br>
+
+            <label for="instituteRegCopy">Upload Registration Copy:</label>
+            <input type="file" name="instituteRegCopy" accept="image/*" required><br>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
